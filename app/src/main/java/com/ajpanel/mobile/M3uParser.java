@@ -1,7 +1,7 @@
 package com.ajpanel.mobile;
 import java.io.*;import java.util.*;import java.util.regex.*;
 public final class M3uParser {
- private static final Pattern A=Pattern.compile("([\\w-]+)=\\"([^\\"]*)\\"");
+ private static final Pattern A=Pattern.compile("([\\w-]+)=\"([^\"]*)\"");
  public static List<Channel> parse(InputStream in)throws IOException{
   List<Channel> out=new ArrayList<>();BufferedReader r=new BufferedReader(new InputStreamReader(in,"UTF-8"));
   String s,n="",g="",l="";
