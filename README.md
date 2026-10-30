@@ -1,22 +1,7 @@
-# AJPanel Mobile v1.0-alpha1
+# AJPanel Mobile v1.1 — Android source
 
-مشروع Android Studio أصلي كبداية لإعادة تنفيذ AJPanel على الهاتف، وليس تحويلًا مباشرًا لإضافة Enigma2.
+Includes an IPTV URL entry screen, Xtream Codes fields, local M3U import, multiple saved playlist sources, channel parsing/search/group filtering and Media3 playback. Includes a basic OpenWebif `/web/about` connectivity test.
 
-## المتاح في هذه النسخة
-- تطبيق Android أصلي، الحد الأدنى Android 7 (API 24).
-- استيراد قوائم M3U/M3U8 من رابط أو ملف محلي.
-- قراءة أسماء القنوات ومجموعاتها.
-- تشغيل روابط HTTP/HTTPS باستخدام AndroidX Media3.
-- إدخال عنوان OpenWebif واختبار المسار `/web/about`.
+This is a source project, not a finished AJPanel port and not an APK. Receiver-side bouquet editing, SFTP/FTP, SSH terminal, EPG, timers/recordings, plugin and SoftCam management, signal monitor and backup/restore are not implemented yet. Those require receiver API integration and testing against the actual Enigma2 image.
 
-## البناء
-- Android Studio حديث.
-- JDK 17.
-- Android SDK Platform 35.
-- افتح مجلد المشروع ثم Sync Gradle ثم Build > Build APK(s).
-
-## ما لم ينفذ بعد
-Bouquet Editor، EPG، Picons، مدير الملفات، FTP/SFTP، SSH Terminal، Plugins، SoftCam، Backup/Restore، التسجيلات والمؤقتات، مراقبة الإشارة، الشبكة، وأدوات التاريخ والوقت. لا تعتبر هذه الوظائف منجزة في هذه النسخة.
-
-## تنبيه
-هذه نسخة Alpha مصدرية ولم يتم تسليم APK مبني أو مختبر. بعض وظائف إدارة Enigma2 تحتاج OpenWebif أو SSH وصلاحيات مناسبة على الرسيفر. قبل التوزيع يجب تشفير بيانات الدخول وتقييد الاتصال بالشبكات الموثوقة.
+Build using Android Studio, JDK 17, Android SDK 35 and Gradle 8.11.1. Run `gradle :app:assembleDebug` or import the folder. minSdk 24 (Android 7.0). No root or Termux required. HTTP is enabled for local OpenWebif compatibility; do not expose receiver management interfaces directly to the public internet.
